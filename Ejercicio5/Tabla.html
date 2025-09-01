@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla en HTML</title>
+    <style>
+    table, td, th{
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        vertical-align: center;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="2">A</td>
+                <td colspan="4">B</td>
+                <td colspan="2">C</td>
+            </tr>
+            <tr>
+                <td colspan="4">D</td>
+                <td colspan="4">E</td>
+            </tr>
+            <tr>
+                <td colspan="2">F</td>
+                <td colspan="2" rowspan="2">G</td>
+                <td colspan="2">H</td>
+                <td colspan="2">I</td>
+            </tr>
+            <tr>
+                <td colspan="2">J</td>
+                <td colspan="2">K</td>
+                <td colspan="2">L</td>
+            </tr>
+            <tr>
+                <td colspan="4" rowspan="2">M</td>
+                <td colspan="2">N</td>
+                <td colspan="2">O</td>
+            </tr>
+            <tr>
+                <td colspan="2">P</td>
+                <td colspan="2">Q</td>
+            </tr>
+            <tr>
+                <td colspan="4" rowspan="2">R</td>
+                <td colspan="4">S</td>
+            </tr>
+            <tr>
+                <td colspan="2">T</td>
+                <td colspan="2">U</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
