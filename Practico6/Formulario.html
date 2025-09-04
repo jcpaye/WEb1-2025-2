@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatoria</title>
+</head>
+<body>
+    <form action="https://form-receiver.vercel.app/api/form" method="post">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nanme" id="name" maxlength="100" required>
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" maxlength="150" required>
+            </div>
+            <div>
+                <label>Genero:</label><br>
+                <input type="radio" id="generoMasculino" name="genero" value="masculino">
+                <label for="generoMasculino">Masculino</label><br>
+                <input type="radio" id="generoFemenino" name="genero" value="femenino">
+                <label for="generoFemenino">Femenino</label><br>
+            </div>
+            <div>
+                <label for="cedula/pasaporte">Cedula de identidad/Pasaporte:</label>
+                <input type="text" name="cedula/pasaporte" id="cedula/pasaporte" maxlength="15" required>
+            </div>
+            <div>
+                <label for="fechaNac">Fecha de Nacimiento:</label>
+                <input type="date" name="fechaNac" id="fechaNac">
+            </div>
+            <div>
+                <label for="telefono">Telefono de Contacto:</label>
+                <input type="text" name="telefono" id="telefono" required>
+            </div>
+            <div>
+                <label for="ciudad">Ciudad de Residencia:</label>
+                <select name="ciudad" id="ciudad" required>
+                    <option value="SC">Santa Cruz</option>
+                    <option value="LP">La Paz</option>
+                    <option value="CB">Cochabamba</option>
+                    <option value="CH">Chuquisaca</option>
+                    <option value="TJ">Tarija</option>
+                    <option value="BN">Beni</option>
+                    <option value="PN">Pando</option>
+                    <option value="OR">Oruro</option>
+                    <option value="PT">Potosi</option>
+                    <option value="EX">Extranjero</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Datos de inscripcion</legend>
+            <div>
+                <label>Distancia</label><br>
+                <input type="radio" name="distancia" id="distancia" value="5K">
+                <label for="5K">5K</label><br>
+                <input type="radio" name="distancia" id="distancia" value="10K">
+                <label for="10K">10K</label><br>
+            </div>
+            <div>
+                <label>Talla de polera:</label><br>
+                <input type="radio" name="Talla" id="Talla" value="XS">
+                <label for="XS">XS</label><br>
+                <input type="radio" name="Talla" id="Talla" value="S">
+                <label for="S">S</label><br>
+                <input type="radio" name="Talla" id="Talla" value="M">
+                <label for="M">M</label><br>
+                <input type="radio" name="Talla" id="Talla" value="L">
+                <label for="L">L</label><br>
+                <input type="radio" name="Talla" id="Talla" value="XL">
+                <label for="XL">XL</label><br>
+                <input type="radio" name="Talla" id="Talla" value="XXL">
+                <label for="XXL">XXL</label><br>
+            </div>
+            <div>
+                <label for="NomEmerg">Nombre del Contacto de Emergencia</label>
+                <input type="text" name="NomEmerg" id="NomEmerg">
+            </div>
+            <div>
+                <label for="TelEmerg">Telefono del Contacto de Emergencia</label>
+                <input type="text" name="TelEmerg" id="TelEmerg">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Preferencias</legend>
+            <div>
+                <label for="deportes">Deportes que Practica:</label><br>
+                <input type="checkbox" name="deportes[]" value="running">Running<br>
+                <input type="checkbox" name="deportes[]" value="gimnasio">Gimnasio<br>
+                <input type="checkbox" name="deportes[]" value="natacion">Natacion<br>
+                <input type="checkbox" name="deportes[]" value="cilcismo">Ciclismo<br>
+                <input type="checkbox" name="deportes[]" value="crossfit">Crossfit<br>
+                <input type="checkbox" name="deportes[]" value="calistenia">Calistenia<br>
+                <input type="checkbox" name="deportes[]" value="otros">Otros<br>
+            </div>
+            <div>
+                <label for="otroD">Indique otros Deportes no Listados:</label>
+                <input type="text" name="otroD" id="otroD" placeholder="Otros..."><br>
+            </div>
+            <div>
+                <label for="comentarios">Cometarios y Sugerencias:</label><br>
+                <textarea name="comentarios" id="comentarios"></textarea>
+            </div>
+        </fieldset>
+        <div>
+            <a href="Convocatoria.html" target="_blank">Convocatoria</a>
+        </div>
+        <div>
+            <label for="termCon">Acepto los Terminos y Condiciones:</label>
+            <input type="checkbox" name="aceptar" id="termCon" required>
+        </div>
+        <div>
+            <input type="submit" value="Enviar" name="boton_enviar">
+            <input type="reset" value="Reestablecer" name="boton_reestablecer">
+        </div>
+    </form>
+</body>
+</html>
