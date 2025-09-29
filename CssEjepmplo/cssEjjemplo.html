@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Display y Box-Sizing en CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: #2575fc;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+            color: #6a11cb;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .demo-container {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #eaeaea;
+        }
+        
+        .demo-box {
+            background: #6a11cb;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .inline-demo span {
+            background: #2575fc;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+        }
+        
+        .flex-demo {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .flex-demo .demo-box {
+            flex: 1;
+        }
+        
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .box-sizing-demo {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .box-example {
+            width: 45%;
+            padding: 15px;
+            border: 5px solid #2575fc;
+            background: #e6f0ff;
+        }
+        
+        .content-box {
+            box-sizing: content-box;
+        }
+        
+        .border-box {
+            box-sizing: border-box;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2575fc;
+        }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        .interactive-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        select, button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #1a68e8;
+        }
+        
+        .interactive-demo {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 15px 0;
+            min-height: 150px;
+        }
+        
+        .demo-element {
+            background: #6a11cb;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #777;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .box-sizing-demo {
+                flex-direction: column;
+            }
+            
+            .box-example {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Propiedades Display y Box-Sizing en CSS</h1>
+        <p>Comprende y visualiza cómo funcionan estas propiedades fundamentales de CSS</p>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Propiedad Display</h2>
+            <p>La propiedad <code>display</code> especifica el tipo de cuadro de representación utilizado para un elemento HTML. Es una de las propiedades más importantes para controlar el diseño.</p>
+            
+            <h3>Valores Principales</h3>
+            
+            <div class="demo-container">
+                <h4>Display: Block</h4>
+                <p>Los elementos con <code>display: block</code> ocupan todo el ancho disponible y comienzan en una nueva línea.</p>
+                <div class="demo-box" style="display: block;">Elemento Block 1</div>
+                <div class="demo-box" style="display: block;">Elemento Block 2</div>
+            </div>
+            
+            <div class="demo-container inline-demo">
+                <h4>Display: Inline</h4>
+                <p>Los elementos con <code>display: inline</code> fluyen con el contenido y no crean saltos de línea.</p>
+                <span>Elemento Inline 1</span>
+                <span>Elemento Inline 2</span>
+                <span>Elemento Inline 3</span>
+            </div>
+            
+            <div class="demo-container">
+                <h4>Display: Inline-Block</h4>
+                <p>Combina características de ambos: fluye como inline pero permite definir dimensiones como block.</p>
+                <div class="demo-box" style="display: inline-block; width: 150px;">Inline-Block 1</div>
+                <div class="demo-box" style="display: inline-block; width: 150px;">Inline-Block 2</div>
+            </div>
+            
+            <div class="demo-container">
+                <h4>Display: Flex</h4>
+                <p>Crea un contenedor flex que permite un diseño flexible y responsive.</p>
+                <div class="flex-demo">
+                    <div class="demo-box">Flex Item 1</div>
+                    <div class="demo-box">Flex Item 2</div>
+                    <div class="demo-box">Flex Item 3</div>
+                </div>
+            </div>
+            
+            <div class="demo-container">
+                <h4>Display: Grid</h4>
+                <p>Crea un contenedor de cuadrícula para diseños bidimensionales.</p>
+                <div class="grid-demo">
+                    <div class="demo-box">Grid Cell 1</div>
+                    <div class="demo-box">Grid Cell 2</div>
+                    <div class="demo-box">Grid Cell 3</div>
+                    <div class="demo-box">Grid Cell 4</div>
+                    <div class="demo-box">Grid Cell 5</div>
+                    <div class="demo-box">Grid Cell 6</div>
+                </div>
+            </div>
+            
+            <div class="demo-container">
+                <h4>Display: None</h4>
+                <p>El elemento se oculta completamente y no ocupa espacio en el diseño.</p>
+                <div class="demo-box" style="display: none;">Este elemento está oculto</div>
+                <div class="demo-box">Este elemento sí es visible</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Propiedad Box-Sizing</h2>
+            <p>La propiedad <code>box-sizing</code> define cómo se calculan el ancho y alto total de un elemento, incluyendo o excluyendo relleno (padding) y bordes (border).</p>
+            
+            <h3>Box-Sizing: Content-Box (Valor por defecto)</h3>
+            <p>El ancho y alto especificados solo se aplican al contenido del elemento. El padding y border se añaden por fuera.</p>
+            
+            <div class="box-sizing-demo">
+                <div class="box-example content-box">
+                    <div class="example-title">Content-Box</div>
+                    <p>Ancho definido: 100%</p>
+                    <p>Padding: 15px</p>
+                    <p>Border: 5px</p>
+                    <p>Ancho total: 100% + 30px (padding) + 10px (border)</p>
+                </div>
+                
+                <div class="box-example border-box">
+                    <div class="example-title">Border-Box</div>
+                    <p>Ancho definido: 100%</p>
+                    <p>Padding: 15px</p>
+                    <p>Border: 5px</p>
+                    <p>Ancho total: 100% (incluye padding y border)</p>
+                </div>
+            </div>
+            
+            <h3>Box-Sizing: Border-Box</h3>
+            <p>El ancho y alto especificados incluyen el contenido, padding y border. Es más intuitivo para calcular dimensiones.</p>
+            
+            <div class="code">
+                /* Aplicar border-box a todos los elementos */<br>
+                * {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                }<br><br>
+                
+                /* O aplicarlo a elementos específicos */<br>
+                .mi-elemento {<br>
+                &nbsp;&nbsp;box-sizing: border-box;<br>
+                &nbsp;&nbsp;width: 300px;<br>
+                &nbsp;&nbsp;padding: 20px;<br>
+                &nbsp;&nbsp;border: 5px solid #ccc;<br>
+                &nbsp;&nbsp;/* El ancho total será de 300px */<br>
+                }
+            </div>
+        </section>
+    </div>
+    
+    <section class="interactive-controls">
+        <h2>Demostración Interactiva</h2>
+        <p>Cambia las propiedades a continuación para ver cómo afectan al elemento de demostración.</p>
+        
+        <div class="control-group">
+            <label for="displaySelect">Propiedad Display:</label>
+            <select id="displaySelect">
+                <option value="block">Block</option>
+                <option value="inline">Inline</option>
+                <option value="inline-block">Inline-Block</option>
+                <option value="flex">Flex</option>
+                <option value="none">None</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="boxSizingSelect">Propiedad Box-Sizing:</label>
+            <select id="boxSizingSelect">
+                <option value="content-box">Content-Box</option>
+                <option value="border-box">Border-Box</option>
+            </select>
+        </div>
+        
+        <button id="applyButton">Aplicar Cambios</button>
+        
+        <div class="interactive-demo" id="interactiveDemo">
+            <div class="demo-element" id="demoElement">Elemento de Demostración</div>
+            <div class="demo-element">Elemento Adicional 1</div>
+            <div class="demo-element">Elemento Adicional 2</div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2023 Tutorial de CSS - Display y Box-Sizing</p>
+    </footer>
+
+    <script>
+        document.getElementById('applyButton').addEventListener('click', function() {
+            const displayValue = document.getElementById('displaySelect').value;
+            const boxSizingValue = document.getElementById('boxSizingSelect').value;
+            const demoElement = document.getElementById('demoElement');
+            
+            // Aplicar los valores seleccionados
+            demoElement.style.display = displayValue;
+            demoElement.style.boxSizing = boxSizingValue;
+            
+            // Añadir información visual sobre el box-sizing seleccionado
+            if (boxSizingValue === 'content-box') {
+                demoElement.style.width = '200px';
+                demoElement.style.padding = '20px';
+                demoElement.style.border = '5px solid #2575fc';
+                demoElement.textContent = 'Content-Box: Ancho = 200px + 40px padding + 10px border';
+            } else {
+                demoElement.style.width = '200px';
+                demoElement.style.padding = '20px';
+                demoElement.style.border = '5px solid #2575fc';
+                demoElement.textContent = 'Border-Box: Ancho total = 200px (incluye padding y border)';
+            }
+        });
+        
+        // Aplicar valores por defecto al cargar la página
+        window.addEventListener('load', function() {
+            document.getElementById('applyButton').click();
+        });
+    </script>
+</body>
+</html>
