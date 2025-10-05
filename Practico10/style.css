@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+  width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.principal{
+    margin: auto;
+    display: flex;
+    width: 700px;
+}
+.sub{
+    color:#568FC3;
+    font-weight: 400;
+}
+
+.izq{
+    float: left;
+    padding-right: 15px;
+}
+.der{
+    float: right;
+}
+.float{
+    display: inline;
+    overflow: hidden;
+}
