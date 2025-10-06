@@ -1,0 +1,65 @@
+@import url(fonts.css);
+* {
+    box-sizing: border-box;
+}
+main{
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  font-family: Tofino, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 350;
+}
+
+.imagen1{
+  width: 700px;
+  margin: auto;
+  display: flex;
+}
+
+h2{
+  font-family:Tofino, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+p{
+  font-family: Charter, Georgia, serif;
+  text-align:justify;
+}
+
+.imagen2{
+  width: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.imagen3{
+  width: 100%;
+}
+
+table{
+  font-family: Tofino, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.imagen4{
+  width: 100%;
+}
+
+.imagen5{
+  width: 70%;
+  margin: auto;
+  display: flex;
+}
+
+.imagen6{
+  width: 100%;
+}
+
+.imagen7{
+  width: 100%;
+}
+
+.imagen8{
+  width: 100%;
+}
