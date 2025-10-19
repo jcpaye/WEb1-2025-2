@@ -70,7 +70,7 @@ function factorial(n3){
     return n3 * factorial(n3 - 1);
 }
 
-const resultado1 = comparador(1.1, 1.2, 1.3);
+let resultado1 = comparador(1.1, 1.2, 1.3);
 console.log('Primera Funcion: '+ resultado1);
 //******************************************
 let cadenaFinal = serieString(5);
@@ -82,5 +82,5 @@ console.log('Tercera Funcion: ' + resultado2);
 let resultado3 = numerosPrimos(7);
 console.log('Cuarta Funcion: ' + resultado3);
 //********************************************
-const resultado4 = factorial(0);
+let resultado4 = factorial(0);
 console.log('Quinta Funcion: ' + resultado4);
