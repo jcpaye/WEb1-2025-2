@@ -34,30 +34,28 @@ function fibonacci(n1){
 }
 //-------------------------------------------
 function numerosPrimos(n2){
-   let primos = [];
-    let numero = 2;
-    while (primos.length < n2) {
-        let esPrimo = true;
-        if (numero < 2) {
-            esPrimo = false;
-        } else if (numero === 2) {
-            esPrimo = true;
-        } else if (numero % 2 === 0) {
-            esPrimo = false;
-        } else {
-            for (let i = 3; i <= Math.sqrt(numero); i += 2) {
-                if (numero % i === 0) {
-                    esPrimo = false;
-                    break;
-                }
+   let contadorPrimos = 0; 
+    let numeroActual = 2;    
+    let resultado = "";      
+    
+    while (contadorPrimos < n2) {
+        let contadorDivisores = 0;
+        for (let divisor = 1; divisor <= numeroActual; divisor++) {
+            if (numeroActual % divisor === 0) {
+                contadorDivisores++;
             }
         }
-        if (esPrimo) {
-            primos.push(numero);
+        
+        if (contadorDivisores === 2) {
+            if (contadorPrimos > 0) {
+                resultado += ", "; 
+            }
+            resultado += numeroActual;
+            contadorPrimos++;
         }
-        numero++;
+        numeroActual++;  
     }
-    return primos.join(", ");
+    return resultado;
 }
 //---------------------------------------
 function factorial(n3){
@@ -79,7 +77,7 @@ console.log('Segunda Funcion: ' + cadenaFinal);
 let resultado2 = fibonacci(5);
 console.log('Tercera Funcion: ' + resultado2);
 //*******************************************
-let resultado3 = numerosPrimos(7);
+let resultado3 = numerosPrimos(1);
 console.log('Cuarta Funcion: ' + resultado3);
 //********************************************
 let resultado4 = factorial(0);
