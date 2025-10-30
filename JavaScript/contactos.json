@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nombre" : "Juan",
+        "apellido" : "Roman",
+        "ci" : "255112",
+        "telefonos" : [
+
+        ]
+    }
+    
+]
